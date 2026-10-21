@@ -1919,6 +1919,289 @@
         text-align: center;
       }
     }
+  
+    /* ========================================================
+       ACTIVITY DOCUMENTATION GALLERY & COMMITTEE CERTIFICATES
+       ======================================================== */
+    .doc-section-wrapper {
+      margin-top: 64px;
+      padding-top: 54px;
+      border-top: 1px solid var(--border);
+    }
+
+    .doc-section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+
+    .doc-filter-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 38px;
+    }
+
+    .doc-filter-btn {
+      padding: 9px 20px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .doc-filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold-dark);
+    }
+
+    .doc-filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: var(--shadow-md);
+    }
+
+    .doc-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .doc-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(184, 135, 58, 0.4);
+    }
+
+    .doc-media {
+      position: relative;
+      height: 220px;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    .doc-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .doc-card:hover .doc-media img {
+      transform: scale(1.06);
+    }
+
+    .doc-badge-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .badge-tag-fkms {
+      background: linear-gradient(135deg, #1e3a8a, #0284c7);
+      color: #fff;
+    }
+
+    .badge-tag-himasi {
+      background: linear-gradient(135deg, #3730a3, #6366f1);
+      color: #fff;
+    }
+
+    .badge-tag-event {
+      background: linear-gradient(135deg, #9a3412, #ea580c);
+      color: #fff;
+    }
+
+    .doc-overlay-hover {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 21, 40, 0.55);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 3;
+    }
+
+    .doc-card:hover .doc-overlay-hover {
+      opacity: 1;
+    }
+
+    .doc-zoom-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    .doc-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .doc-event-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .doc-event-sub {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .doc-event-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Committee Certificate Cards Mini Grid */
+    .comm-cert-wrapper {
+      margin-top: 54px;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 38px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comm-cert-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .comm-cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .comm-cert-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-canvas);
+      transition: var(--transition);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .comm-cert-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      background: #ffffff;
+    }
+
+    .comm-cert-thumb {
+      height: 140px;
+      overflow: hidden;
+      background: #0f172a;
+    }
+
+    .comm-cert-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.4s ease;
+    }
+
+    .comm-cert-card:hover .comm-cert-thumb img {
+      transform: scale(1.05);
+    }
+
+    .comm-cert-body {
+      padding: 14px 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .comm-cert-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .comm-cert-role {
+      font-size: 11.5px;
+      color: var(--gold-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .comm-cert-org {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 1024px) {
+      .doc-gallery-grid, .comm-cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .doc-gallery-grid, .comm-cert-grid {
+        grid-template-columns: 1fr;
+      }
+      .comm-cert-wrapper {
+        padding: 24px 18px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1930,7 +2213,7 @@
     <div class="nav-container">
       <a href="#hero" class="brand" aria-label="Beranda">
         <div class="brand-mark">KN</div>
-        <div class="brand-text">Kholifatun<span>.</span></div>
+        <div class="brand-text">Naisa<span>.</span></div>
       </a>
 
       <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Menu" aria-expanded="false">
@@ -1943,7 +2226,7 @@
         <li><a href="#about" class="nav-link">Tentang</a></li>
         <li><a href="#certs" class="nav-link">Sertifikat & Prestasi</a></li>
         <li><a href="#projects" class="nav-link">Karya & Proyek</a></li>
-        <li><a href="#journey" class="nav-link">Organisasi & Skill</a></li>
+        <li><a href="#journey" class="nav-link">Organisasi & Dokumentasi</a></li>
         <li><a href="#contact" class="nav-cta">Hubungi Saya ✉</a></li>
       </ul>
     </div>
@@ -1993,12 +2276,10 @@
             </div>
 
             <div class="hero-tags">
-              <span class="hero-tags-label">Fokus Utama:</span>
-              <span class="pill-tag">⚛️ React & Next.js</span>
-              <span class="pill-tag">🟢 Node.js</span>
-              <span class="pill-tag">🔐 Keamanan Siber</span>
+              <span class="hero-tags-label">Fokus Saat Ini:</span>
               <span class="pill-tag">📜 HKI Kemenkumham</span>
-              <span class="pill-tag">🌐 International Finalist</span>
+              <span class="pill-tag">🏛️ Organisasi Internal dan External Kampus</span>
+              <span class="pill-tag">🌐 International dan Nasional Finalist</span>
             </div>
           </div>
 
@@ -2080,7 +2361,7 @@
           <div class="stat-card">
             <div class="stat-icon">💼</div>
             <div>
-              <div class="stat-number">10+</div>
+              <div class="stat-number">2</div>
               <div class="stat-label">Proyek & Karya Implementatif</div>
             </div>
           </div>
@@ -2109,7 +2390,7 @@
             </p>
 
             <p class="about-p">
-              Saya juga mengasah wawasan global dan kepemimpinan dengan menjadi finalis di <strong>Universiti Putra Malaysia (UPM)</strong>, kompetisi esai nasional di Universitas Mataram, serta mengemban amanah sebagai <strong>Sekretaris 1 Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM</strong> periode 2025–2026.
+              Saya juga mengasah wawasan global dan kepemimpinan dengan menjadi finalis di <strong>Universiti Putra Malaysia (UPM)</strong>, kompetisi esai nasional di Universitas Mataram, serta mengemban amanah sebagai <strong>Sekretaris Umum Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM</strong> periode 2026–2027 dan <strong>Sekretaris 1 Himpunan Mahasiswa Sistem Informasi Periode 2026</strong>.
             </p>
 
             <div class="about-facts-grid">
@@ -2127,7 +2408,7 @@
               </div>
               <div class="fact-item">
                 <span class="fact-title">Minat Utama</span>
-                <span class="fact-desc">Web Dev, Cybersecurity, Data</span>
+                <span class="fact-desc">Web Dev, UI/UX, Mobile APP</span>
               </div>
             </div>
 
@@ -2144,7 +2425,7 @@
                 "Bagi saya, teknologi bukan hanya deretan baris kode, melainkan sarana untuk <em>menyederhanakan masalah</em> dan membuka peluang baru bagi mereka yang membutuhkan."
               </p>
               <div class="quote-author">
-                <span>Kholifatun Naisa · Mahasiswa & Pengembang Perangkat Lunak</span>
+                <span>Kholifatun Naisa · Mahasiswa Sistem Informasi</span>
               </div>
             </div>
           </div>
@@ -2382,107 +2663,6 @@
                 </button>
               </div>
             </div>
-          </article>
-
-          <!-- Project 2: E-Commerce ShopEase -->
-          <article class="project-card reveal">
-            <div class="project-banner" style="background: linear-gradient(135deg, #1e3a5f 0%, #112239 100%);">
-              <span class="project-tag-pill">Fullstack Proyek</span>
-              <div class="banner-graphic">
-                <div class="banner-graphic-icon">🛍️</div>
-                <div class="banner-graphic-title">ShopEase Platform</div>
-                <div class="banner-graphic-badge">E-Commerce & Payment Integration</div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="tech-stack">
-                <span class="tech-pill">React.js</span>
-                <span class="tech-pill">Node.js</span>
-                <span class="tech-pill">Express</span>
-                <span class="tech-pill">MongoDB</span>
-                <span class="tech-pill">Midtrans API</span>
-              </div>
-              <h3 class="project-title">ShopEase — Platform E-Commerce Terintegrasi</h3>
-              <p class="project-desc">
-                Platform belanja online modern dengan arsitektur RESTful API. Dilengkapi sistem autentikasi aman berbasis JWT, manajemen katalog produk dinamis, keranjang belanja interaktif, dan simulasi gerbang pembayaran instan.
-              </p>
-              <div class="project-highlight-box">
-                <strong>Keahlian Teruji:</strong> State Management terpusat, pengamanan rute backend, dan optimasi performa query database.
-              </div>
-              <div class="project-links">
-                <a href="#contact" class="btn-proj-action">
-                  <span>Minta Akses Demo</span>
-                </a>
-                <span style="font-size: 12px; color: var(--text-soft);">Tahun: 2024–2025</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: TaskFlow Mobile -->
-          <article class="project-card reveal">
-            <div class="project-banner" style="background: linear-gradient(135deg, #243b55 0%, #141e30 100%);">
-              <span class="project-tag-pill">Mobile Application</span>
-              <div class="banner-graphic">
-                <div class="banner-graphic-icon">📱</div>
-                <div class="banner-graphic-title">TaskFlow Mobile App</div>
-                <div class="banner-graphic-badge">Productivity & Team Sync</div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="tech-stack">
-                <span class="tech-pill">React Native</span>
-                <span class="tech-pill">Firebase Realtime</span>
-                <span class="tech-pill">Expo</span>
-                <span class="tech-pill">UI/UX Mobile</span>
-              </div>
-              <h3 class="project-title">TaskFlow — Kolaborasi & Manajemen Tugas Tim</h3>
-              <p class="project-desc">
-                Aplikasi mobile yang dirancang untuk mempermudah koordinasi pengerjaan proyek kelompok mahasiswa. Menyediakan papan tugas bergaya Kanban, sinkronisasi status waktu nyata, dan pengingat deadline berkala.
-              </p>
-              <div class="project-highlight-box">
-                <strong>Kolaborasi:</strong> Dikembangkan bersama tim dengan kontrol versi Git branch & continuous testing.
-              </div>
-              <div class="project-links">
-                <a href="#contact" class="btn-proj-action">
-                  <span>Lihat Dokumentasi</span>
-                </a>
-                <span style="font-size: 12px; color: var(--text-soft);">Tahun: 2024</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: Cybersecurity & Research -->
-          <article class="project-card reveal">
-            <div class="project-banner" style="background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);">
-              <span class="project-tag-pill">Keamanan & Riset</span>
-              <div class="banner-graphic">
-                <div class="banner-graphic-icon">🛡️</div>
-                <div class="banner-graphic-title">Cybersecurity Defense Lab</div>
-                <div class="banner-graphic-badge">APAC Fund & Audit Keamanan</div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="tech-stack">
-                <span class="tech-pill">Security Audit</span>
-                <span class="tech-pill">OWASP Top 10</span>
-                <span class="tech-pill">Linux Networking</span>
-                <span class="tech-pill">Data Protection</span>
-              </div>
-              <h3 class="project-title">Analisis Keamanan Siber & Perlindungan Data</h3>
-              <p class="project-desc">
-                Eksperimen evaluasi keamanan aplikasi web terhadap celah SQL Injection, Cross-Site Scripting (XSS), dan brute force. Hasil analisis diimplementasikan pada perlindungan modul login sistem informasi.
-              </p>
-              <div class="project-highlight-box">
-                <strong>Sertifikasi Terkait:</strong> Program APAC Cybersecurity Fund oleh The Asia Foundation di Universitas Trunodjoyo Madura.
-              </div>
-              <div class="project-links">
-                <button onclick="openLightbox('SERTIFIKAT/sertif cyber security.png', 'Pelatihan APAC Cybersecurity Fund', 'Universitas Trunodjoyo Madura', 'B/304/UN46.5.5/KM.05.02/2026')" class="btn-proj-action">
-                  <span>Lihat Sertifikat Pelatihan ↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
@@ -2494,37 +2674,50 @@
       <div class="container">
         
         <div class="section-head reveal">
-          <span class="section-badge">Perjalanan & Kemampuan</span>
-          <h2 class="section-title">Akademik, Organisasi, dan <em>Keahlian</em></h2>
+          <span class="section-badge">Organisasi & Rekam Jejak</span>
+          <h2 class="section-title">Kepemimpinan, Kontribusi, dan <em>Dokumentasi Kegiatan</em></h2>
           <p class="section-sub">
-            Pertumbuhan berkelanjutan melalui studi formal di kampus, kepengurusan himpunan mahasiswa, dan penguasaan teknologi perangkat lunak.
+            Dedikasi aktif dalam himpunan mahasiswa jurusan Sistem Informasi (HIMASI) dan Forum Komunikasi Mahasiswa Sumenep (FKMS) Universitas Trunojoyo Madura.
           </p>
         </div>
 
         <div class="journey-grid">
           
-          <!-- Column 1: Academic & Organizational Journey -->
+          <!-- Column 1: Leadership Journey -->
           <div class="journey-col reveal">
             <h3 class="journey-column-title">
-              <span>🎓</span> Pendidikan & Kepemimpinan
+              <span>🏛️</span> Pengalaman Organisasi & Kepengurusan
             </h3>
 
             <div class="timeline">
               
-              <!-- Item 1: S1 Ilmu Komputer UTM -->
+              <!-- Item 1: FKMS 2026-2027 -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
-                  <span class="timeline-badge">2024 – Sekarang · Semester 5</span>
-                  <h4 class="timeline-role">S1 Sistem Informasi</h4>
-                  <div class="timeline-org">Universitas Trunodjoyo Madura (UTM)</div>
+                  <span class="timeline-badge">Periode 2026 – 2027</span>
+                  <h4 class="timeline-role">Sekretaris Umum</h4>
+                  <div class="timeline-org">Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM</div>
                   <p class="timeline-text">
-                    Fokus pada rekayasa perangkat lunak, sistem basis data, pemrograman web lanjut, struktur data, dan keamanan informasi. Aktif dalam program penciptaan perangkat lunak UMKM dan kompetisi ilmiah.
+                    Memimpin tata kelola administrasi utama, perumusan regulasi organisasi, koordinasi lintas divisi kepengurusan, dan pelaksanaan program akbar penyambutan mahasiswa baru serta musyawarah daerah.
                   </p>
                 </div>
               </div>
 
-              <!-- Item 2: Sekretaris 1 FKMS UTM -->
+              <!-- Item 2: FKMS 2025-2026 -->
+              
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <span class="timeline-badge">Periode 2026</span>
+                  <h4 class="timeline-role">Sekretaris 1</h4>
+                  <div class="timeline-org">Himpunan Mahasiswa Sistem Informasi (HIMASI) Fakultas Teknik UTM</div>
+                  <p class="timeline-text">
+                    Berperan aktif dalam organisasi ini dan saya juga turun untuk mengawasi Sekretaris Pelaksana HIMASI sebagai Sekretaris 1, kemudian saya juga melakukan perekapan administrasi organisasi ini.
+                  </p>
+                </div>
+              </div>
+              
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
@@ -2532,20 +2725,32 @@
                   <h4 class="timeline-role">Sekretaris 1</h4>
                   <div class="timeline-org">Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM</div>
                   <p class="timeline-text">
-                    Memimpin tata kelola administrasi organisasi, korespondensi resmi antar lembaga kampus, inventarisasi data anggota, dan mendukung kelancaran program keakraban daerah.
+                    Bertanggung jawab penuh atas manajemen korespondensi resmi, pengarsipan berkas dinas, pendataan anggota aktif, dan penyelenggaraan agenda tahunan keakraban mahasiswa Sumenep.
                   </p>
                 </div>
               </div>
 
-              <!-- Item 3: Delegasi & Finalis Summit Internasional -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
-                  <span class="timeline-badge">Tahun 2026</span>
-                  <h4 class="timeline-role">Finalis International Summit & Lomba Essay</h4>
-                  <div class="timeline-org">Universiti Putra Malaysia & Universitas Mataram</div>
+                  <span class="timeline-badge">Periode 2025</span>
+                  <h4 class="timeline-role">Staff Departemen HUMAS</h4>
+                  <div class="timeline-org">Himpunan Mahasiswa Sistem Informasi (HIMASI) Fakultas Teknik UTM</div>
                   <p class="timeline-text">
-                    Mewakili ide dan pemikiran inovatif di ajang 3rd International Student Summit (Malaysia) serta kompetisi esai nasional FESMA di Lombok.
+                    Berperan aktif dalam berbagai kepanitiaan di program kerja yang diadakan oleh HIMASI
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 4: LKMM-TD FT UTM -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                  <span class="timeline-badge">Tahun 2025</span>
+                  <h4 class="timeline-role">Peserta & Delegasi Terpilih</h4>
+                  <div class="timeline-org">LKMM-TD (Latihan Keterampilan Manajemen Mahasiswa) FT UTM</div>
+                  <p class="timeline-text">
+                    Mengikuti pelatihan kepemimpinan intensif tingkat fakultas untuk mengasah pola pikir manajerial, resolusi konflik tim, dan perancangan program kerja skala besar.
                   </p>
                 </div>
               </div>
@@ -2553,42 +2758,47 @@
             </div>
           </div>
 
-          <!-- Column 2: Relevant Courses & Skills Board -->
+          <!-- Column 2: Academic & Skills Board -->
           <div class="journey-col reveal">
             <h3 class="journey-column-title">
-              <span>💡</span> Mata Kuliah & Kompetensi Inti
+              <span>🎓</span> Latar Belakang Studi & Kompetensi
             </h3>
 
             <div class="timeline-card" style="margin-bottom: 24px;">
-              <h4 class="timeline-role" style="font-size: 15px; margin-bottom: 12px;">Mata Kuliah Unggulan</h4>
-              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <span class="skill-item-pill">Algoritma & Pemrograman</span>
+              <span class="timeline-badge">2023 – Sekarang · Semester 6</span>
+              <h4 class="timeline-role" style="font-size: 16px;">S1 Sistem Informasi</h4>
+              <div class="timeline-org" style="margin-bottom: 10px;">Fakultas Teknik · Universitas Trunojoyo Madura</div>
+              <p class="timeline-text" style="margin-bottom: 16px;">
+                Mempelajari integrasi teknologi informasi dalam proses bisnis, analisis data, rekayasa piranti lunak web, dan tata kelola sistem informasi yang adaptif.
+              </p>
+              
+              <h5 style="font-size: 13px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">Mata Kuliah Utama:</h5>
+              <div style="display: flex; flex-wrap: wrap; gap: 7px;">
                 <span class="skill-item-pill">Pemrograman Web</span>
                 <span class="skill-item-pill">Sistem Basis Data</span>
-                <span class="skill-item-pill">Rekayasa Perangkat Lunak</span>
-                <span class="skill-item-pill">Keamanan Jaringan & Sistem</span>
-                <span class="skill-item-pill">Desain UI/UX</span>
-                <span class="skill-item-pill">Sistem Informasi Manajemen</span>
-                <span class="skill-item-pill">Kecerdasan Buatan Dasar</span>
+                <span class="skill-item-pill">Analisis & Desain SI</span>
+                <span class="skill-item-pill">Data Mining & BI</span>
+                <span class="skill-item-pill">Keamanan Sistem & Siber</span>
+                <span class="skill-item-pill">Tata Kelola SI</span>
               </div>
             </div>
 
-            <!-- Skills Categories -->
+            <!-- Tech Stack & Tools -->
             <div class="timeline-card">
-              <h4 class="timeline-role" style="font-size: 15px; margin-bottom: 14px;">Tech Stack & Perangkat Kerja</h4>
+              <h4 class="timeline-role" style="font-size: 15px; margin-bottom: 14px;">Keahlian Teknis & Tools</h4>
               
               <div style="margin-bottom: 16px;">
-                <span style="font-size: 11.5px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Frontend Development</span>
+                <span style="font-size: 11px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Frontend & Desain UI</span>
                 <div class="skill-badges-flow" style="margin-top: 6px;">
                   <span class="skill-item-pill">⚛️ React.js</span>
                   <span class="skill-item-pill">🎨 Tailwind CSS</span>
                   <span class="skill-item-pill">⚡ JavaScript (ES6+)</span>
-                  <span class="skill-item-pill">🌐 HTML5 / CSS3 Semantic</span>
+                  <span class="skill-item-pill">🖌️ Figma</span>
                 </div>
               </div>
 
               <div style="margin-bottom: 16px;">
-                <span style="font-size: 11.5px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Backend & Database</span>
+                <span style="font-size: 11px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Backend & Database</span>
                 <div class="skill-badges-flow" style="margin-top: 6px;">
                   <span class="skill-item-pill">🟢 Node.js & Express</span>
                   <span class="skill-item-pill">🐬 MySQL / MariaDB</span>
@@ -2598,12 +2808,12 @@
               </div>
 
               <div>
-                <span style="font-size: 11.5px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Alat & Metodologi</span>
+                <span style="font-size: 11px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Administrasi & Manajemen Event</span>
                 <div class="skill-badges-flow" style="margin-top: 6px;">
+                  <span class="skill-item-pill">📄 Tata Kelola Persuratan</span>
+                  <span class="skill-item-pill">📊 Manajemen Kepanitiaan</span>
+                  <span class="skill-item-pill">🤝 Kolaborasi Antar Lembaga</span>
                   <span class="skill-item-pill">🔀 Git & GitHub</span>
-                  <span class="skill-item-pill">📬 Postman API</span>
-                  <span class="skill-item-pill">🖌️ Figma UI Design</span>
-                  <span class="skill-item-pill">🛡️ OWASP Principles</span>
                 </div>
               </div>
 
@@ -2613,13 +2823,347 @@
 
         </div>
 
+        <!-- ========================================================
+             DOKUMENTASI KEGIATAN ORGANISASI (ACTIVITY GALLERY)
+             ======================================================== -->
+        <div class="doc-section-wrapper reveal">
+          <div class="doc-section-head">
+            <span class="section-badge">Galeri Dokumentasi</span>
+            <h2 class="section-title">Dokumentasi <em>Kegiatan & Kepanitiaan</em></h2>
+            <p class="section-sub">
+              Dokumentasi visual momen pelantikan, musyawarah mahasiswa, forum penyambutan, malam keakraban, hingga aksi kepanitiaan di lingkungan Universitas Trunojoyo Madura.
+            </p>
+          </div>
+
+          <!-- Documentation Filter Tabs -->
+          <div class="doc-filter-tabs">
+            <button class="doc-filter-btn active" data-doc-filter="all">Semua Momen (12)</button>
+            <button class="doc-filter-btn" data-doc-filter="fkms">FKMS UTM (6)</button>
+            <button class="doc-filter-btn" data-doc-filter="himasi">HIMASI UTM (4)</button>
+            <button class="doc-filter-btn" data-doc-filter="event">Kepanitiaan & Pelatihan (2)</button>
+          </div>
+
+          <!-- Documentation Photo Cards Grid -->
+          <div class="doc-gallery-grid" id="docGalleryGrid">
+
+            <!-- 1. Pelantikan FKMS 2026-2027 -->
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.jpeg', 'Pelantikan Pengurus FKMS Periode 2026–2027', 'Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM', 'Momen pelantikan akbar kepengurusan FKMS UTM periode 2026–2027 di Gedung Pertemuan UTM dengan jajaran pembina dan seluruh anggota terpilih.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-fkms">🏛️ FKMS 2026–2027</span>
+                <img src="dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.jpeg" alt="Pelantikan Pengurus FKMS Periode 2026–2027" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Pelantikan Pengurus FKMS Periode 2026–2027</h4>
+                <div class="doc-event-sub"><span>📍</span> Auditorium Universitas Trunojoyo Madura</div>
+                <p class="doc-event-desc">
+                  Pelantikan resmi pengurus FKMS UTM di hadapan pimpinan kampus dan pembina organisasi, mengawali amanah kepengurusan baru.
+                </p>
+              </div>
+            </article>
+
+            <!-- 2. HIMASI 2026 Rektorat -->
+            <article class="doc-card reveal" data-doc-category="himasi" onclick="openDocLightbox('dokumentasi kepanitiaan himasi periode 2026/himasi 2.3.jpeg', 'Foto Resmi Pengurus HIMASI UTM Periode 2026', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'Sesi foto resmi seluruh jajaran fungsionaris HIMASI UTM Periode 2026 di pelataran Gedung Rektorat Universitas Trunojoyo Madura.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-himasi">⚙️ HIMASI 2026</span>
+                <img src="dokumentasi kepanitiaan himasi periode 2026/himasi 2.3.jpeg" alt="Foto Resmi Pengurus HIMASI UTM 2026" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Foto Resmi Pengurus HIMASI UTM 2026</h4>
+                <div class="doc-event-sub"><span>📍</span> Gedung Rektorat Universitas Trunojoyo Madura</div>
+                <p class="doc-event-desc">
+                  Fungsionaris Himpunan Mahasiswa Sistem Informasi (HIMASI) berfoto resmi membawa panji kebanggaan himpunan di kampus UTM.
+                </p>
+              </div>
+            </article>
+
+            <!-- 3. Meet Up CAMABA 2026 FKMS -->
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.1.jpeg', 'Meet Up Mahasiswa Baru (CAMABA) 2026', 'FKMS Universitas Trunojoyo Madura', 'Program penyambutan, bimbingan arahan, serta ramah tamah bagi mahasiswa baru asal Kabupaten Sumenep yang menempuh studi di UTM.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-fkms">👋 Meet Up Camaba</span>
+                <img src="dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.1.jpeg" alt="Meet Up CAMABA 2026 FKMS UTM" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Meet Up Mahasiswa Baru (CAMABA) 2026</h4>
+                <div class="doc-event-sub"><span>📍</span> Madura · Sinergi Mahasiswa Baru</div>
+                <p class="doc-event-desc">
+                  Kegiatan sambut mahasiswa baru asal Sumenep untuk memberikan panduan akademik, orientasi kehidupan kampus, dan jejaring kekeluargaan.
+                </p>
+              </div>
+            </article>
+
+            <!-- 4. Pelantikan FKMS 2025-2026 -->
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.2.jpeg', 'Pelantikan Pengurus FKMS Periode 2025–2026', 'FKMS Universitas Trunojoyo Madura', 'Pelantikan kepengurusan FKMS UTM Periode 2025–2026 mengenakan jas almamater UTM saat saya resmi diangkat sebagai Sekretaris 1.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-fkms">🎓 FKMS 2025–2026</span>
+                <img src="dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.2.jpeg" alt="Pelantikan Pengurus FKMS 2025–2026" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Pelantikan Pengurus FKMS Periode 2025–2026</h4>
+                <div class="doc-event-sub"><span>📍</span> Pendopo / Aula Pelantikan UTM</div>
+                <p class="doc-event-desc">
+                  Momen awal pengabdian sebagai Sekretaris 1 FKMS UTM bersama pengurus inti dalam balutan jas almamater kebanggaan.
+                </p>
+              </div>
+            </article>
+
+            <!-- 5. Musyawarah Mahasiswa XII FKMS -->
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.jpeg', 'Musyawarah Mahasiswa (MUSMA) Ke-XII FKMS UTM', 'FKMS Universitas Trunojoyo Madura', 'Forum permusyawaratan tertinggi organisasi untuk pembahasan Anggaran Dasar/Anggaran Rumah Tangga (AD/ART) serta evaluasi pertanggungjawaban program kerja.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-fkms">📜 MUSMA XII</span>
+                <img src="dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.jpeg" alt="Musyawarah Mahasiswa XII FKMS UTM" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Musyawarah Mahasiswa (MUSMA) Ke-XII</h4>
+                <div class="doc-event-sub"><span>📍</span> Gedung Pertemuan Kampus UTM</div>
+                <p class="doc-event-desc">
+                  Forum permusyawaratan tertinggi organisasi dalam mengevaluasi tata kelola persuratan, LPJ tahunan, dan regenerasi kepemimpinan.
+                </p>
+              </div>
+            </article>
+
+            <!-- 6. Panitia Turnamen F-FECT 2026 -->
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.3.jpeg', 'Panitia Turnamen Futsal F-FECT 2026', 'FKMS Universitas Trunojoyo Madura', 'Kebersamaan seluruh tim panitia pelaksana turnamen futsal F-FECT 2026 yang diselenggarakan oleh FKMS UTM dengan peserta dari berbagai fakultas.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-fkms">⚽ Panitia F-FECT 2026</span>
+                <img src="dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.3.jpeg" alt="Panitia Turnamen F-FECT 2026" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Panitia Turnamen Futsal F-FECT 2026</h4>
+                <div class="doc-event-sub"><span>📍</span> Lapangan Futsal Sport Center Madura</div>
+                <p class="doc-event-desc">
+                  Dokumentasi kekompakan panitia pelaksana turnamen olahraga tahunan F-FECT setelah penutupan kompetisi yang sukses.
+                </p>
+              </div>
+            </article>
+
+            <!-- 7. Pengurus HIMASI 2025 -->
+            <article class="doc-card reveal" data-doc-category="himasi" onclick="openDocLightbox('dokumentasi kepanitiaan himasi periode 2025/himasi 1.jpeg', 'Kepengurusan HIMASI UTM Periode 2025', 'HIMASI Fakultas Teknik UTM', 'Foto bersama pengurus Himpunan Mahasiswa Sistem Informasi Periode 2025 di ruang perkuliahan Fakultas Teknik UTM.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-himasi">⚙️ HIMASI 2025</span>
+                <img src="dokumentasi kepanitiaan himasi periode 2025/himasi 1.jpeg" alt="Kepengurusan HIMASI UTM Periode 2025" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Kepengurusan HIMASI UTM Periode 2025</h4>
+                <div class="doc-event-sub"><span>📍</span> Gedung Kuliah Fakultas Teknik UTM</div>
+                <p class="doc-event-desc">
+                  Keterlibatan aktif dalam kepengurusan himpunan mahasiswa jurusan Sistem Informasi pada masa awal pengabdian kampus.
+                </p>
+              </div>
+            </article>
+
+            <!-- 8. Makrab HIMASI UTM -->
+            <article class="doc-card reveal" data-doc-category="himasi" onclick="openDocLightbox('dokumentasi kepanitiaan himasi periode 2026/himasi 2.4.jpeg', 'Malam Keakraban (Makrab) HIMASI UTM', 'HIMASI Fakultas Teknik UTM', 'Momen kebersamaan malam keakraban keluarga besar Sistem Informasi UTM untuk mempererat solidaritas antar angkatan.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-himasi">🔥 Makrab HIMASI</span>
+                <img src="dokumentasi kepanitiaan himasi periode 2026/himasi 2.4.jpeg" alt="Malam Keakraban HIMASI UTM" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Malam Keakraban (Makrab) HIMASI UTM</h4>
+                <div class="doc-event-sub"><span>📍</span> Gathering & Bonding Sistem Informasi</div>
+                <p class="doc-event-desc">
+                  Kegiatan keakraban malam hari yang mempertemukan fungsionaris dan anggota aktif Sistem Informasi guna memperkokoh sinergi kerja.
+                </p>
+              </div>
+            </article>
+
+            <!-- 9. Rapat Kerja / Evaluasi FKMS -->
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.4.jpeg', 'Rapat Koordinasi & Evaluasi Program Kerja FKMS', 'FKMS Universitas Trunojoyo Madura', 'Diskusi santai dan koordinasi evaluasi program kerja bulanan pengurus harian Forum Komunikasi Mahasiswa Sumenep UTM.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-fkms">📋 Rapat Koordinasi</span>
+                <img src="dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.4.jpeg" alt="Rapat Koordinasi FKMS UTM" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Rapat Koordinasi & Evaluasi Kerja FKMS</h4>
+                <div class="doc-event-sub"><span>📍</span> Sekretariat / Basecamp FKMS UTM</div>
+                <p class="doc-event-desc">
+                  Sesi evaluasi administrasi, monitoring kelancaran proker, dan konsolidasi tim pengurus demi peningkatan kualitas kinerja organisasi.
+                </p>
+              </div>
+            </article>
+
+            <!-- 10. Delegasi LKMM-TD FT UTM -->
+            <article class="doc-card reveal" data-doc-category="event" onclick="openDocLightbox('sertifikat kepanitiaan/lkmm.jpeg', 'Latihan Keterampilan Manajemen Mahasiswa (LKMM-TD)', 'Fakultas Teknik Universitas Trunojoyo Madura', 'Peserta terpilih LKMM-TD Fakultas Teknik UTM di Batu, Malang bersama jajaran pimpinan dan delegasi ormawa fakultas.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-event">🎖️ LKMM-TD FT UTM</span>
+                <img src="sertifikat kepanitiaan/lkmm.jpeg" alt="LKMM-TD Fakultas Teknik Universitas Trunojoyo Madura" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Latihan Keterampilan Manajemen Mahasiswa (LKMM-TD)</h4>
+                <div class="doc-event-sub"><span>📍</span> Batu, Malang · Fakultas Teknik UTM</div>
+                <p class="doc-event-desc">
+                  Pelatihan manajemen organisasi, kepemimpinan adaptif, dan resolusi dinamika mahasiswa tingkat dasar se-Fakultas Teknik UTM.
+                </p>
+              </div>
+            </article>
+
+            <!-- 11. Divisi Pelaksana Aslah F-FECT 2026 -->
+            <article class="doc-card reveal" data-doc-category="event" onclick="openDocLightbox('sertifikat kepanitiaan/aslah.jpeg', 'Divisi Pelaksana Turnamen F-FECT 2026 (Aslah)', 'Panitia F-FECT 2026 & Sponsor Aslah', 'Dokumentasi tim pelaksana lapangan F-FECT 2026 di depan backdrop sponsor resmi kegiatan turnamen futsal.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-event">🏆 Panitia Lapangan</span>
+                <img src="sertifikat kepanitiaan/aslah.jpeg" alt="Divisi Pelaksana Turnamen F-FECT 2026 Aslah" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Tim Pelaksana F-FECT 2026 (Aslah Team)</h4>
+                <div class="doc-event-sub"><span>📍</span> Venue Pertandingan F-FECT 2026</div>
+                <p class="doc-event-desc">
+                  Dokumentasi ceria tim divisi pelaksana bersama mitra sponsor dalam menyukseskan gelaran F-FECT 2026.
+                </p>
+              </div>
+            </article>
+
+            <!-- 12. Foto Formal Pengurus FKMS (Batik) -->
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/WhatsApp Image 2026-10-18 at 11.05.32 PM.jpeg', 'Foto Formal Pengurus FKMS UTM (Dresscode Batik)', 'FKMS Universitas Trunojoyo Madura', 'Momen foto bersama formal mengenakan busana batik khas Madura oleh seluruh jajaran pengurus Forum Komunikasi Mahasiswa Sumenep UTM.')">
+              <div class="doc-media">
+                <span class="doc-badge-tag badge-tag-fkms">🏛️ Formal FKMS</span>
+                <img src="dokumentasi kepanitiaan fkms periode 2026-2027/WhatsApp Image 2026-10-18 at 11.05.32 PM.jpeg" alt="Foto Formal Pengurus FKMS UTM Batik" loading="lazy" />
+                <div class="doc-overlay-hover">
+                  <div class="doc-zoom-btn">🔍</div>
+                </div>
+              </div>
+              <div class="doc-body">
+                <h4 class="doc-event-title">Foto Bersama Formal Pengurus FKMS UTM</h4>
+                <div class="doc-event-sub"><span>📍</span> Gedung Pertemuan Kampus UTM</div>
+                <p class="doc-event-desc">
+                  Sesi foto kebersamaan formal berbusana batik seluruh jajaran pengurus harian dan divisi FKMS UTM.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ========================================================
+             SERTIFIKAT KEPANITIAAN & PROGRAM KERJA KAMPUS
+             ======================================================== -->
+        <div class="comm-cert-wrapper reveal">
+          <div class="comm-cert-head">
+            <div>
+              <span class="section-badge" style="margin-bottom:8px;">Kepanitiaan Terverifikasi</span>
+              <h3 style="font-size:22px; font-weight:800; color:var(--primary); margin-bottom:4px;">
+                Sertifikat Kepanitiaan Event Kampus
+              </h3>
+              <p style="font-size:13px; color:var(--text-muted); margin:0;">
+                Bukti keaktifan sebagai panitia pelaksana kompetisi ilmiah, orientasi jurusan, dan kegiatan olahraga mahasiswa.
+              </p>
+            </div>
+            <span style="font-size:12px; font-weight:700; color:var(--gold-dark); background:var(--gold-light); padding:6px 14px; border-radius:var(--radius-pill);">
+              6 Sertifikat Kepanitiaan Resmi
+            </span>
+          </div>
+
+          <div class="comm-cert-grid">
+            
+            <!-- 1. DISCO 2025 -->
+            <div class="comm-cert-card" onclick="openLightbox('sertifikat kepanitiaan/disco.jpeg', 'Sertifikat Panitia DISCO 2025 (Data Mining Competition)', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'No: B/4899/UN/46.3.4/KN.05.03/2025', 'Panitia dalam acara DISCO (Data Mining in Information System Competition) dengan tema Creativity and Data Innovation Challenge tanggal 15 Juni 2025.')">
+              <div class="comm-cert-thumb">
+                <img src="sertifikat kepanitiaan/disco.jpeg" alt="Sertifikat DISCO 2025 HIMASI UTM" loading="lazy" />
+              </div>
+              <div class="comm-cert-body">
+                <h5 class="comm-cert-title">DISCO 2025 — Data Mining Competition</h5>
+                <div class="comm-cert-role">Panitia Pelaksana</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+              </div>
+            </div>
+
+            <!-- 2. PROKSI 2025 -->
+            <div class="comm-cert-card" onclick="openLightbox('sertifikat kepanitiaan/proksi.jpeg', 'Sertifikat Panitia PROKSI 2025', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'No: B/6666/UN46.3.4/KM.06.02/2025', 'Panitia dalam acara PROKSI 2025 UNITY (Understand, Navigate, Integrate, Trust, and Youth Spirit) tanggal 19 Agustus 2025.')">
+              <div class="comm-cert-thumb">
+                <img src="sertifikat kepanitiaan/proksi.jpeg" alt="Sertifikat PROKSI 2025 HIMASI UTM" loading="lazy" />
+              </div>
+              <div class="comm-cert-body">
+                <h5 class="comm-cert-title">PROKSI 2025 — Orientasi Sistem Informasi</h5>
+                <div class="comm-cert-role">Panitia Pelaksana</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+              </div>
+            </div>
+
+            <!-- 3. EFIS 2025 -->
+            <div class="comm-cert-card" onclick="openLightbox('sertifikat kepanitiaan/efis.jpeg', 'Sertifikat Kepanitiaan EFIS 2025 — CO Sie Kesehatan', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'No: B/11028/UN46.3.4/KM.05.03/2025', 'Menjabat sebagai CO Sie Kesehatan dalam kepanitiaan EFIS 2025 HIMASI UTM.')">
+              <div class="comm-cert-thumb">
+                <img src="sertifikat kepanitiaan/efis.jpeg" alt="Sertifikat EFIS 2025 CO Sie Kesehatan" loading="lazy" />
+              </div>
+              <div class="comm-cert-body">
+                <h5 class="comm-cert-title">EFIS 2025</h5>
+                <div class="comm-cert-role">CO Sie Kesehatan</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+              </div>
+            </div>
+
+            <!-- 4. KOREKSI 6.0 -->
+            <div class="comm-cert-card" onclick="openLightbox('sertifikat kepanitiaan/design.jpeg', 'Sertifikat Panitia KOREKSI 6.0 2025', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'No: B/3032/UN46.3.4/KM.05.03/2025', 'Panitia dalam acara KOREKSI 6.0 (Kontes Kreasi & Edukasi Sistem Informasi) tanggal 11–30 Mei 2025.')">
+              <div class="comm-cert-thumb">
+                <img src="sertifikat kepanitiaan/design.jpeg" alt="Sertifikat KOREKSI 6.0 HIMASI UTM" loading="lazy" />
+              </div>
+              <div class="comm-cert-body">
+                <h5 class="comm-cert-title">KOREKSI 6.0 — Kontes Kreasi & Edukasi SI</h5>
+                <div class="comm-cert-role">Panitia Pelaksana</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+              </div>
+            </div>
+
+            <!-- 5. X-CAMP 2025 -->
+            <div class="comm-cert-card" onclick="openLightbox('sertifikat kepanitiaan/x camp.jpeg', 'Sertifikat Panitia X-CAMP 2025', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'No: B/8323/UN46.3.4/HM.02.02/2025', 'Panitia dalam acara X-CAMP 2025 UNITY di Jungle Pinus Camp Pasuruan tanggal 31 Oktober – 2 November 2025.')">
+              <div class="comm-cert-thumb">
+                <img src="sertifikat kepanitiaan/x camp.jpeg" alt="Sertifikat X-CAMP 2025 HIMASI UTM" loading="lazy" />
+              </div>
+              <div class="comm-cert-body">
+                <h5 class="comm-cert-title">X-CAMP 2025 — Jungle Pinus Camp</h5>
+                <div class="comm-cert-role">Panitia Pelaksana</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+              </div>
+            </div>
+
+            <!-- 6. F-FECT 2026 -->
+            <div class="comm-cert-card" onclick="openLightbox('sertifikat kepanitiaan/ffect.jpeg', 'Sertifikat Panitia Futsal F-FECT 2026', 'Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM', 'No: 026/B/Pan.F-FECT/FKMS/UTM/V/2026', 'Panitia dalam acara Futsal F-FECT 2026 Menyatu Strategi, Membangun Sportivitas tanggal 10 Mei 2026.')">
+              <div class="comm-cert-thumb">
+                <img src="sertifikat kepanitiaan/ffect.jpeg" alt="Sertifikat Futsal F-FECT 2026 FKMS UTM" loading="lazy" />
+              </div>
+              <div class="comm-cert-body">
+                <h5 class="comm-cert-title">Futsal F-FECT 2026</h5>
+                <div class="comm-cert-role">Panitia Pelaksana</div>
+                <div class="comm-cert-org">FKMS Universitas Trunojoyo Madura</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
-
-    <!-- ========================================================
-         CONTACT SECTION
-         ======================================================== -->
-    <section id="contact" class="section">
+<section id="contact" class="section">
       <div class="container">
         
         <div class="contact-container-box reveal">
@@ -2924,7 +3468,7 @@
 
       // 7. Copy Email Helper
       window.copyEmail = () => {
-        const email = "kholifatunnaisa@gmail.com";
+        const email = "naisahifa@gmail.com";
         if (navigator.clipboard) {
           navigator.clipboard.writeText(email).then(() => {
             showToast("✅ Alamat email berhasil disalin: " + email);
