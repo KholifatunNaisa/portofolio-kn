@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio Kholifatun Naisa — Mahasiswa Ilmu Komputer Universitas Trunodjoyo Madura. Finalis Internasional & Nasional, Pemegang Hak Cipta HKI Kemenkumham, Fullstack Developer." />
-  <meta name="keywords" content="Kholifatun Naisa, Portfolio, Universitas Trunodjoyo Madura, Ilmu Komputer, Fullstack Web Developer, HKI Kemenkumham, Finalis Internasional, UTM" />
+  <meta name="description" content="Portfolio Kholifatun Naisa (Naisa) — Mahasiswa S1 Sistem Informasi Universitas Trunodjoyo Madura. Finalis Internasional & Nasional, Pemegang Hak Cipta HKI Kemenkumham RI, Sekretaris Umum FKMS UTM & Sekretaris 1 HIMASI UTM." />
+  <meta name="keywords" content="Kholifatun Naisa, Naisa, Portfolio, Mahasiswa, Sistem Informasi, Universitas Trunodjoyo Madura, UTM, HKI Kemenkumham, FKMS UTM, HIMASI UTM, System Analyst, UI UX, Sumenep" />
   <meta name="author" content="Kholifatun Naisa" />
-  <title>Kholifatun Naisa · Portfolio & Prestasi</title>
+  <title>Kholifatun Naisa (Naisa) · Portfolio Mahasiswa Sistem Informasi UTM</title>
   
   <!-- Favicon icon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
@@ -1051,8 +1051,8 @@
        ======================================================== */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
 
     .project-card {
@@ -1075,46 +1075,58 @@
     .project-banner {
       height: 220px;
       position: relative;
-      background: linear-gradient(135deg, #102038 0%, #1c3254 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #0f172a;
       overflow: hidden;
-      padding: 24px;
+      display: block;
+      text-decoration: none;
     }
 
-    .banner-graphic {
+    .project-banner-img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .project-card:hover .project-banner-img {
+      transform: scale(1.06);
+    }
+
+    .project-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      z-index: 1;
+      justify-content: flex-end;
+      padding: 16px 20px;
+      pointer-events: none;
+      transition: background 0.3s ease;
     }
 
-    .banner-graphic-icon {
-      font-size: 46px;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    .project-card:hover .project-banner-overlay {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0.88) 100%);
     }
 
-    .banner-graphic-title {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .banner-graphic-badge {
+    .project-banner-badge-label {
       font-size: 11px;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--gold-light);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 4px;
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+      display: block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .project-banner-caption {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     .project-tag-pill {
@@ -1123,12 +1135,37 @@
       right: 14px;
       padding: 6px 12px;
       border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
       color: #fff;
       font-size: 11px;
       font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-tag-live {
+      background: rgba(16, 185, 129, 0.25) !important;
+      border-color: rgba(52, 211, 153, 0.6) !important;
+      color: #6ee7b7 !important;
+    }
+
+    .live-pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: #34d399;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulseGreen 1.8s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.8); }
+      70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
 
     .project-content {
@@ -1843,7 +1880,7 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
-      .certs-grid {
+      .certs-grid, .projects-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .contact-container-box {
@@ -2245,7 +2282,7 @@
             <div class="hero-badge-wrap">
               <div class="status-pill">
                 <span class="pulse-dot"></span>
-                <span>Mahasiswa Aktif Sistem Infromasi · Universitas Trunodjoyo Madura</span>
+                <span>Mahasiswa Aktif Sistem Informasi · Universitas Trunodjoyo Madura</span>
               </div>
             </div>
 
@@ -2255,7 +2292,7 @@
             </h1>
 
             <p class="hero-subtitle">
-              Future Software Engineer & <strong>Fullstack Developer</strong>
+              Mahasiswa Sistem Informasi | <strong>System Analyst & UI/UX Enthusiast</strong>
             </p>
 
             <p class="hero-description">
@@ -2361,7 +2398,7 @@
           <div class="stat-card">
             <div class="stat-icon">💼</div>
             <div>
-              <div class="stat-number">2</div>
+              <div class="stat-number">3</div>
               <div class="stat-label">Proyek & Karya Implementatif</div>
             </div>
           </div>
@@ -2408,12 +2445,12 @@
               </div>
               <div class="fact-item">
                 <span class="fact-title">Minat Utama</span>
-                <span class="fact-desc">Web Dev, UI/UX, Mobile APP</span>
+                <span class="fact-desc">System Analysis, UI/UX, Mobile APP</span>
               </div>
             </div>
 
             <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="#contact" class="btn-primary">Hubungi untuk Kolaborasi</a>
+              <a href="#contact" class="btn-primary">Mari Terhubung</a>
               <a href="SERTIFIKAT/surat ciptaan.pdf" target="_blank" class="btn-secondary">Lihat Berkas HKI Resmi ↗</a>
             </div>
           </div>
@@ -2442,9 +2479,9 @@
         
         <div class="section-head reveal">
           <span class="section-badge">Portofolio Prestasi</span>
-          <h2 class="section-title">Sertifikat & <em>Penghargaan Resmi</em></h2>
+          <h2 class="section-title">Sertifikat & <em>Prestasi Mahasiswa</em></h2>
           <p class="section-sub">
-            Bukti kompetensi terverifikasi dari tingkat internasional, kementerian nasional, pelatihan keamanan siber, dan rekam jejak kepengurusan organisasi.
+            Beberapa pencapaian, sertifikasi kompetensi, dan sertifikat kegiatan resmi yang saya ikuti selama masa perkuliahan di Universitas Trunodjoyo Madura.
           </p>
         </div>
 
@@ -2454,7 +2491,7 @@
           <button class="filter-btn" data-filter="internasional">Internasional & Nasional</button>
           <button class="filter-btn" data-filter="hki">HKI Kemenkumham RI</button>
           <button class="filter-btn" data-filter="cyber">Keamanan Siber</button>
-          <button class="filter-btn" data-filter="organisasi">Kepengurusan</button>
+          <button class="filter-btn" data-filter="organisasi">Kepengurusan Organisasi</button>
         </div>
 
         <!-- Certificate Cards Grid -->
@@ -2462,7 +2499,7 @@
 
           <!-- 1. SERTIFIKAT INTERNASIONAL: MALAYSIA -->
           <article class="cert-card reveal" data-category="internasional">
-            <div class="cert-media" onclick="openLightbox('SERTIFIKAT/malaysia.png', 'Finalist - 3rd International Student Summit (3rd ISS)', 'Universiti Putra Malaysia (UPM) & Sentosa Foundation', 'No: 149/3rdISS/FINALIST/SF-CEM-UPM/IX/2026', 'Malaysia, September 12–13, 2026')">
+            <div class="cert-media" onclick="openLightbox('SERTIFIKAT/malaysia.png', 'Finalist - 3rd International Student Summit (3rd ISS)', 'Universiti Putra Malaysia (UPM) & Sentosa Foundation', 'No: 149/3rdISS/FINALIST/SF-CEM-UPM/IX/2026', 'Malaysia, 12–13 September 2026')">
               <span class="cert-badge-type badge-international">🌍 Tingkat Internasional</span>
               <img src="SERTIFIKAT/malaysia.png" alt="Sertifikat 3rd International Student Summit Malaysia - Universiti Putra Malaysia" loading="lazy" />
               <div class="cert-overlay">
@@ -2471,10 +2508,10 @@
               </div>
             </div>
             <div class="cert-content">
-              <div class="cert-institution">UPM & Sentosa Foundation</div>
-              <h3 class="cert-title">Finalist - 3rd International Student Summit (3rd ISS)</h3>
+              <div class="cert-institution">Universiti Putra Malaysia & Sentosa Foundation</div>
+              <h3 class="cert-title">Finalist — 3rd International Student Summit (3rd ISS)</h3>
               <p class="cert-desc">
-                Terpilih sebagai Finalis tingkat internasional yang diselenggarakan oleh Sentosa Foundation bekerja sama dengan CEM Universiti Putra Malaysia (UPM).
+                Alhamdulillah terpilih sebagai Finalis di ajang konferensi mahasiswa internasional 3rd ISS di Malaysia. Pengalaman luar biasa bisa mempresentasikan ide inovatif, bertukar wawasan dengan teman-teman lintas negara, dan membawa nama almamater UTM di kancah global.
               </p>
               <div class="cert-meta-list">
                 <div class="cert-meta-item"><span>Lokasi:</span><strong>Malaysia</strong></div>
@@ -2482,7 +2519,7 @@
                 <div class="cert-meta-item"><span>No. Sertifikat:</span><strong>149/3rdISS/FINALIST/...</strong></div>
               </div>
               <div class="cert-actions">
-                <button class="btn-cert-view" onclick="openLightbox('SERTIFIKAT/malaysia.png', 'Finalist - 3rd International Student Summit (3rd ISS)', 'Universiti Putra Malaysia (UPM) & Sentosa Foundation', 'No: 149/3rdISS/FINALIST/SF-CEM-UPM/IX/2026', 'Malaysia, September 12–13, 2026')">
+                <button class="btn-cert-view" onclick="openLightbox('SERTIFIKAT/malaysia.png', 'Finalist - 3rd International Student Summit (3rd ISS)', 'Universiti Putra Malaysia (UPM) & Sentosa Foundation', 'No: 149/3rdISS/FINALIST/SF-CEM-UPM/IX/2026', 'Malaysia, 12–13 September 2026')">
                   🔍 Lihat Resolusi Penuh
                 </button>
                 <a href="SERTIFIKAT/malaysia.png" download class="btn-cert-pdf" title="Unduh Gambar">⬇ Unduh</a>
@@ -2504,7 +2541,7 @@
               <div class="cert-institution">Universitas Mataram & Sentosa Foundation</div>
               <h3 class="cert-title">Finalis Lomba Essay Tingkat Nasional FESMA</h3>
               <p class="cert-desc">
-                Meraih predikat Finalis pada Festival Essay Siswa, Mahasiswa dan Akademisi (FESMA) tingkat nasional melalui gagasan inovasi ilmiah komputasi.
+                Meraih predikat Finalis lomba esai nasional FESMA yang diselenggarakan BEM Fakultas Pertanian Unram bersama Sentosa Foundation. Membahas gagasan integrasi data dan teknologi digital dalam karya tulis ilmiah.
               </p>
               <div class="cert-meta-list">
                 <div class="cert-meta-item"><span>Lokasi:</span><strong>Lombok, NTB</strong></div>
@@ -2534,7 +2571,7 @@
               <div class="cert-institution">Kementerian Hukum Republik Indonesia</div>
               <h3 class="cert-title">Surat Pencatatan Ciptaan — Website Keuangan UMKM</h3>
               <p class="cert-desc">
-                Perlindungan Hak Cipta resmi atas karya <em>Program Komputer: Pembuatan Website Untuk Laporan Keuangan (UMKM Mie Aigo Kamal)</em> bersama tim pengembang UTM.
+                Sertifikat Hak Cipta resmi dari DJKI Kemenkumham RI atas karya program komputer: <em>Pembuatan Website Untuk Laporan Keuangan (UMKM Mie Aigo Kamal)</em>, hasil karya implementatif bersama tim mahasiswa dan dosen pembimbing UTM.
               </p>
               <div class="cert-meta-list">
                 <div class="cert-meta-item"><span>No. Pencatatan:</span><strong>001059325</strong></div>
@@ -2564,7 +2601,7 @@
               <div class="cert-institution">UTM & The Asia Foundation</div>
               <h3 class="cert-title">Pelatihan APAC Cybersecurity Fund</h3>
               <p class="cert-desc">
-                Menyelesaikan pelatihan intensif mengenai fondasi keamanan siber, analisis kerentanan sistem, dan mitigasi risiko digital yang diselenggarakan di kampus UTM.
+                Pelatihan intensif bidang keamanan siber dari The Asia Foundation bersama UPA PKKW UTM, mempelajari dasar-dasar cyber defense, deteksi celah keamanan web, dan perlindungan data digital.
               </p>
               <div class="cert-meta-list">
                 <div class="cert-meta-item"><span>Instansi:</span><strong>UPA PKKW UTM</strong></div>
@@ -2583,7 +2620,7 @@
           <!-- 5. KEPENGURUSAN: FKMS UTM -->
           <article class="cert-card reveal" data-category="organisasi">
             <div class="cert-media" onclick="openLightbox('SERTIFIKAT/sertif_kepengurusan.png', 'Sertifikat Penghargaan Kepengurusan - Sekretaris 1', 'Forum Komunikasi Mahasiswa Sumenep (FKMS) Univ. Trunodjoyo Madura', 'Nomor: 22/B/Sekum/FKMS/UTM/IX/2026', 'Periode Kepengurusan 2025–2026', 'SERTIFIKAT/Sertifikat Kepengurusan Naisa.pdf')">
-              <span class="cert-badge-type badge-org">🏛️ Kepemimpinan</span>
+              <span class="cert-badge-type badge-org">🏛️ Kepengurusan Organisasi</span>
               <img src="SERTIFIKAT/sertif_kepengurusan.png" alt="Sertifikat Kepengurusan Sekretaris 1 FKMS Universitas Trunodjoyo Madura" loading="lazy" />
               <div class="cert-overlay">
                 <div class="cert-overlay-icon">🔍</div>
@@ -2592,9 +2629,9 @@
             </div>
             <div class="cert-content">
               <div class="cert-institution">FKMS Universitas Trunodjoyo Madura</div>
-              <h3 class="cert-title">Sertifikat Penghargaan — Sekretaris 1</h3>
+              <h3 class="cert-title">Sertifikat Kepengurusan — Sekretaris 1</h3>
               <p class="cert-desc">
-                Penghargaan atas dedikasi dan kontribusi sebagai <strong>Sekretaris 1</strong> dalam struktur pengurus Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM periode 2025–2026.
+                Piagam penghargaan resmi atas amanah dan kontribusi aktif sebagai <strong>Sekretaris 1</strong> Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM periode 2025–2026 dalam mengelola administrasi organisasi.
               </p>
               <div class="cert-meta-list">
                 <div class="cert-meta-item"><span>Jabatan:</span><strong>Sekretaris 1</strong></div>
@@ -2615,16 +2652,16 @@
     </section>
 
     <!-- ========================================================
-         FEATURED PROJECTS SECTION
+         FEATURED PROJECTS SECTION (3 PROYEK IMPLEMENTATIF)
          ======================================================== -->
     <section id="projects" class="section">
       <div class="container">
         
         <div class="section-head reveal">
-          <span class="section-badge">Hasil Karya</span>
-          <h2 class="section-title">Proyek & <em>Implementasi Nyata</em></h2>
+          <span class="section-badge">Hasil Karya & Implementasi</span>
+          <h2 class="section-title">Karya & <em>Proyek Mahasiswa</em></h2>
           <p class="section-sub">
-            Karya pemrograman dan sistem informasi yang dibangun untuk memecahkan problem nyata dari skala UMKM hingga riset akademis.
+            Penerapan ilmu Sistem Informasi dalam bentuk proyek nyata untuk UMKM kuliner, digitalisasi perpustakaan sekolah, serta desain UI/UX aplikasi konsultasi hukum.
           </p>
         </div>
 
@@ -2632,12 +2669,12 @@
           
           <!-- Project 1: Mie Aigo Kamal (HKI Certified) -->
           <article class="project-card reveal">
-            <div class="project-banner" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
-              <span class="project-tag-pill">📜 Terdaftar HKI</span>
-              <div class="banner-graphic">
-                <div class="banner-graphic-icon">📊</div>
-                <div class="banner-graphic-title">Website Laporan Keuangan UMKM</div>
-                <div class="banner-graphic-badge">Mie Aigo Kamal · Bangkalan</div>
+            <div class="project-banner" onclick="openLightbox('SERTIFIKAT/sertif_surat_ciptaan.png', 'Surat Pencatatan Ciptaan Program Komputer (HKI)', 'Kementerian Hukum RI', 'No: 001059325')" title="Lihat Surat Ciptaan HKI" style="cursor: pointer;">
+              <span class="project-tag-pill">📜 Terdaftar Resmi HKI</span>
+              <img src="aigo.png" alt="Website Laporan Keuangan UMKM Mie Aigo Kamal" class="project-banner-img" loading="lazy" />
+              <div class="project-banner-overlay">
+                <span class="project-banner-badge-label">Mie Aigo Kamal · Bangkalan</span>
+                <h4 class="project-banner-caption">Sistem Laporan Keuangan UMKM</h4>
               </div>
             </div>
             <div class="project-content">
@@ -2649,10 +2686,10 @@
               </div>
               <h3 class="project-title">Sistem Laporan Keuangan UMKM Mie Aigo Kamal</h3>
               <p class="project-desc">
-                Sistem web pencatatan keuangan dan akuntansi sederhana yang dikembangkan untuk UMKM kuliner di Kamal, Bangkalan. Membantu pemilik mengelola arus kas harian, menghitung margin keuntungan, dan menghasilkan laporan neraca otomatis.
+                Proyek website pencatatan kas masuk, kas keluar, dan omzet harian yang dibuat untuk membantu UMKM kuliner Mie Aigo di kawasan Kamal, Bangkalan. Membantu pemilik usaha mengetahui keuntungan bersih harian dan menyusun laporan pembukuan sederhana secara otomatis.
               </p>
               <div class="project-highlight-box">
-                <strong>Prestasi Resmi:</strong> Terdaftar secara hukum di Kemenkumham RI dengan Nomor Pencatatan <strong>001059325</strong>.
+                <strong>Prestasi Resmi:</strong> Tercatat resmi dalam Hak Kekayaan Intelektual (HKI) Kemenkumham RI No. <strong>001059325</strong>.
               </div>
               <div class="project-links">
                 <a href="SERTIFIKAT/surat ciptaan.pdf" target="_blank" class="btn-proj-action gold-action">
@@ -2663,6 +2700,84 @@
                 </button>
               </div>
             </div>
+          </article>
+
+          <!-- Project 2: Perpustakaan SMKN 1 Kamal (Live Deployed) -->
+          <article class="project-card reveal">
+            <a href="http://perpustakaan-smkn-1-kamal.site.je/" target="_blank" rel="noopener noreferrer" class="project-banner" title="Buka Website Perpustakaan SMKN 1 Kamal (Tab Baru)">
+              <span class="project-tag-pill project-tag-live">
+                <span class="live-pulse-dot"></span> Live Deployed
+              </span>
+              <img src="perpustakaan.webp" alt="Website Perpustakaan Digital SMKN 1 Kamal" class="project-banner-img" loading="lazy" />
+              <div class="project-banner-overlay">
+                <span class="project-banner-badge-label">SMKN 1 Kamal · Bangkalan</span>
+                <h4 class="project-banner-caption">Sistem Perpustakaan Digital</h4>
+              </div>
+            </a>
+            <div class="project-content">
+              <div class="tech-stack">
+                <span class="tech-pill">Web Application</span>
+                <span class="tech-pill">PHP & MySQL</span>
+                <span class="tech-pill">Digital Library</span>
+                <span class="tech-pill">Bootstrap CSS</span>
+                <span class="tech-pill">Live Deployed</span>
+              </div>
+              <h3 class="project-title">Sistem Informasi Perpustakaan Digital SMKN 1 Kamal</h3>
+              <p class="project-desc">
+                Aplikasi sistem informasi perpustakaan sekolah berbasis web yang dibangun dan berhasil di-deploy untuk SMKN 1 Kamal, Bangkalan. Membantu digitalisasi pendataan buku, kemudahan pencarian katalog pustaka bagi siswa dan guru, sistem sirkulasi peminjaman serta pengembalian, dan pencatatan inventaris perpustakaan sekolah secara real-time.
+              </p>
+              <div class="project-highlight-box">
+                <strong>Status Terbit:</strong> Website aktif dan dapat diakses daring langsung di <strong>perpustakaan-smkn-1-kamal.site.je</strong>.
+              </div>
+              <div class="project-links">
+                <a href="http://perpustakaan-smkn-1-kamal.site.je/" target="_blank" rel="noopener noreferrer" class="btn-proj-action gold-action" title="Buka Website Perpustakaan Langsung">
+                  <span>🚀 Kunjungi Website (Live) ↗</span>
+                </a>
+                <button onclick="copyProjectLink('http://perpustakaan-smkn-1-kamal.site.je/')" class="btn-proj-action" title="Salin Tautan Website">
+                  <span>🔗 Salin Tautan</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Aplikasi Konsultasi Pengacara (UI/UX Figma - Technotainment 2026) -->
+          <article class="project-card reveal">
+            <a href="https://www.figma.com/design/R5MVX8FIkjA329W0rKFw3F/TECHNOTAINMENT-2026?node-id=0-1&amp;t=j9Vy1dbmyWrgLiMy-1" target="_blank" rel="noopener noreferrer" class="project-banner" title="Buka Desain Figma Aplikasi Konsultasi Pengacara (Tab Baru)">
+              <span class="project-tag-pill" style="background: rgba(147, 51, 234, 0.25); border-color: rgba(192, 132, 252, 0.5); color: #e9d5ff;">
+                🎨 Desain UI/UX Figma
+              </span>
+              <img src="konsultasi.png" alt="Desain UI/UX Aplikasi Konsultasi Pengacara - Technotainment 2026" class="project-banner-img" loading="lazy" />
+              <div class="project-banner-overlay">
+                <span class="project-banner-badge-label">TECHNOTAINMENT 2026 · UI/UX Design</span>
+                <h4 class="project-banner-caption">Aplikasi Konsultasi Pengacara</h4>
+              </div>
+            </a>
+            <div class="project-content">
+              <div class="tech-stack">
+                <span class="tech-pill">Figma Design</span>
+                <span class="tech-pill">UI/UX Research</span>
+                <span class="tech-pill">Mobile Prototype</span>
+                <span class="tech-pill">Design System</span>
+                <span class="tech-pill">Technotainment 2026</span>
+              </div>
+              <h3 class="project-title">Aplikasi Konsultasi Pengacara — Desain UI/UX Mobile</h3>
+              <p class="project-desc">
+                Perancangan antarmuka dan pengalaman pengguna (UI/UX) untuk aplikasi konsultasi hukum dan advokat online pada ajang Technotainment 2026. Menghadirkan solusi akses bantuan hukum yang mudah, transparan, dan terpercaya bagi masyarakat lewat alur pencarian pengacara terverifikasi, penjadwalan temu, sesi konsultasi chat/video, serta estimasi biaya yang transparan.
+              </p>
+              <div class="project-highlight-box">
+                <strong>Desain Interaktif Figma:</strong> Prototipe antarmuka lengkap dapat dieksplorasi langsung melalui file desain Figma resmi.
+              </div>
+              <div class="project-links">
+                <a href="https://www.figma.com/design/R5MVX8FIkjA329W0rKFw3F/TECHNOTAINMENT-2026?node-id=0-1&amp;t=j9Vy1dbmyWrgLiMy-1" target="_blank" rel="noopener noreferrer" class="btn-proj-action gold-action" title="Buka Prototipe Figma">
+                  <span>🎨 Buka Desain Figma ↗</span>
+                </a>
+                <button onclick="copyProjectLink('https://www.figma.com/design/R5MVX8FIkjA329W0rKFw3F/TECHNOTAINMENT-2026?node-id=0-1&amp;t=j9Vy1dbmyWrgLiMy-1')" class="btn-proj-action" title="Salin Tautan Figma">
+                  <span>🔗 Salin Tautan</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -2675,9 +2790,9 @@
         
         <div class="section-head reveal">
           <span class="section-badge">Organisasi & Rekam Jejak</span>
-          <h2 class="section-title">Kepemimpinan, Kontribusi, dan <em>Dokumentasi Kegiatan</em></h2>
+          <h2 class="section-title">Pengalaman Organisasi & <em>Perjalanan Belajar</em></h2>
           <p class="section-sub">
-            Dedikasi aktif dalam himpunan mahasiswa jurusan Sistem Informasi (HIMASI) dan Forum Komunikasi Mahasiswa Sumenep (FKMS) Universitas Trunojoyo Madura.
+            Proses berdinamika di himpunan mahasiswa Sistem Informasi (HIMASI) dan Forum Komunikasi Mahasiswa Sumenep (FKMS) Universitas Trunodjoyo Madura.
           </p>
         </div>
 
@@ -2699,13 +2814,12 @@
                   <h4 class="timeline-role">Sekretaris Umum</h4>
                   <div class="timeline-org">Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM</div>
                   <p class="timeline-text">
-                    Memimpin tata kelola administrasi utama, perumusan regulasi organisasi, koordinasi lintas divisi kepengurusan, dan pelaksanaan program akbar penyambutan mahasiswa baru serta musyawarah daerah.
+                    Mengemban amanah sebagai Sekretaris Umum untuk memimpin tata kelola administrasi utama, merapikan alur persuratan dinas, mengoordinasikan sekretaris bidang, serta mengawal agenda akbar penyambutan mahasiswa baru Sumenep dan musyawarah tahunan.
                   </p>
                 </div>
               </div>
 
-              <!-- Item 2: FKMS 2025-2026 -->
-              
+              <!-- Item 2: HIMASI 2026 -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
@@ -2718,6 +2832,7 @@
                 </div>
               </div>
               
+              <!-- Item 3: FKMS 2025-2026 -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
@@ -2725,11 +2840,12 @@
                   <h4 class="timeline-role">Sekretaris 1</h4>
                   <div class="timeline-org">Forum Komunikasi Mahasiswa Sumenep (FKMS) UTM</div>
                   <p class="timeline-text">
-                    Bertanggung jawab penuh atas manajemen korespondensi resmi, pengarsipan berkas dinas, pendataan anggota aktif, dan penyelenggaraan agenda tahunan keakraban mahasiswa Sumenep.
+                    Bertanggung jawab mengelola administrasi surat-menyurat resmi, notulensi rapat, pengarsipan berkas dinas, pendataan anggota aktif, dan mendukung kelancaran agenda tahunan keakraban mahasiswa Sumenep di perantauan kampus UTM.
                   </p>
                 </div>
               </div>
 
+              <!-- Item 4: HIMASI 2025 -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
@@ -2737,12 +2853,12 @@
                   <h4 class="timeline-role">Staff Departemen HUMAS</h4>
                   <div class="timeline-org">Himpunan Mahasiswa Sistem Informasi (HIMASI) Fakultas Teknik UTM</div>
                   <p class="timeline-text">
-                    Berperan aktif dalam berbagai kepanitiaan di program kerja yang diadakan oleh HIMASI
+                    Berperan aktif dalam berbagai kepanitiaan di program kerja yang diadakan oleh HIMASI, menyebarluaskan info akademik kepada teman-teman mahasiswa, dan belajar dinamika keorganisasian kampus.
                   </p>
                 </div>
               </div>
 
-              <!-- Item 4: LKMM-TD FT UTM -->
+              <!-- Item 5: LKMM-TD FT UTM -->
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
@@ -2750,7 +2866,7 @@
                   <h4 class="timeline-role">Peserta & Delegasi Terpilih</h4>
                   <div class="timeline-org">LKMM-TD (Latihan Keterampilan Manajemen Mahasiswa) FT UTM</div>
                   <p class="timeline-text">
-                    Mengikuti pelatihan kepemimpinan intensif tingkat fakultas untuk mengasah pola pikir manajerial, resolusi konflik tim, dan perancangan program kerja skala besar.
+                    Terpilih sebagai delegasi dalam pelatihan kepemimpinan dan manajemen organisasi mahasiswa tingkat dasar se-Fakultas Teknik di Batu, Malang untuk melatih kerja sama tim, komunikasi publik, dan perancangan program kerja kampus.
                   </p>
                 </div>
               </div>
@@ -2761,15 +2877,15 @@
           <!-- Column 2: Academic & Skills Board -->
           <div class="journey-col reveal">
             <h3 class="journey-column-title">
-              <span>🎓</span> Latar Belakang Studi & Kompetensi
+              <span>🎓</span> Latar Belakang Studi & Keahlian
             </h3>
 
             <div class="timeline-card" style="margin-bottom: 24px;">
-              <span class="timeline-badge">2023 – Sekarang · Semester 6</span>
+              <span class="timeline-badge">2024 – Sekarang · Semester 5</span>
               <h4 class="timeline-role" style="font-size: 16px;">S1 Sistem Informasi</h4>
-              <div class="timeline-org" style="margin-bottom: 10px;">Fakultas Teknik · Universitas Trunojoyo Madura</div>
+              <div class="timeline-org" style="margin-bottom: 10px;">Fakultas Teknik · Universitas Trunodjoyo Madura</div>
               <p class="timeline-text" style="margin-bottom: 16px;">
-                Mempelajari integrasi teknologi informasi dalam proses bisnis, analisis data, rekayasa piranti lunak web, dan tata kelola sistem informasi yang adaptif.
+                Mempelajari penerapan teknologi informasi dalam proses bisnis, perancangan antarmuka pengguna (UI/UX) yang ramah pengguna, manajemen basis data, analisis sistem, dan dasar-dasar pemrograman web.
               </p>
               
               <h5 style="font-size: 13px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">Mata Kuliah Utama:</h5>
@@ -2777,23 +2893,23 @@
                 <span class="skill-item-pill">Pemrograman Web</span>
                 <span class="skill-item-pill">Sistem Basis Data</span>
                 <span class="skill-item-pill">Analisis & Desain SI</span>
-                <span class="skill-item-pill">Data Mining & BI</span>
-                <span class="skill-item-pill">Keamanan Sistem & Siber</span>
-                <span class="skill-item-pill">Tata Kelola SI</span>
+                <span class="skill-item-pill">UI/UX Design</span>
+                <span class="skill-item-pill">Keamanan Sistem Informasi</span>
+                <span class="skill-item-pill">Manajemen Proyek TI</span>
               </div>
             </div>
 
             <!-- Tech Stack & Tools -->
             <div class="timeline-card">
-              <h4 class="timeline-role" style="font-size: 15px; margin-bottom: 14px;">Keahlian Teknis & Tools</h4>
+              <h4 class="timeline-role" style="font-size: 15px; margin-bottom: 14px;">Keahlian Teknis & Perangkat Kerja</h4>
               
               <div style="margin-bottom: 16px;">
-                <span style="font-size: 11px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Frontend & Desain UI</span>
+                <span style="font-size: 11px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Frontend & Desain UI/UX</span>
                 <div class="skill-badges-flow" style="margin-top: 6px;">
                   <span class="skill-item-pill">⚛️ React.js</span>
                   <span class="skill-item-pill">🎨 Tailwind CSS</span>
                   <span class="skill-item-pill">⚡ JavaScript (ES6+)</span>
-                  <span class="skill-item-pill">🖌️ Figma</span>
+                  <span class="skill-item-pill">🖌️ Figma (UI/UX Prototype)</span>
                 </div>
               </div>
 
@@ -2802,17 +2918,17 @@
                 <div class="skill-badges-flow" style="margin-top: 6px;">
                   <span class="skill-item-pill">🟢 Node.js & Express</span>
                   <span class="skill-item-pill">🐬 MySQL / MariaDB</span>
+                  <span class="skill-item-pill">🐘 PHP</span>
                   <span class="skill-item-pill">🍃 MongoDB</span>
-                  <span class="skill-item-pill">🐍 Python</span>
                 </div>
               </div>
 
               <div>
-                <span style="font-size: 11px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Administrasi & Manajemen Event</span>
+                <span style="font-size: 11px; font-weight: 700; color: var(--gold-dark); text-transform: uppercase;">Administrasi & Soft Skills</span>
                 <div class="skill-badges-flow" style="margin-top: 6px;">
-                  <span class="skill-item-pill">📄 Tata Kelola Persuratan</span>
-                  <span class="skill-item-pill">📊 Manajemen Kepanitiaan</span>
-                  <span class="skill-item-pill">🤝 Kolaborasi Antar Lembaga</span>
+                  <span class="skill-item-pill">📄 Manajemen Persuratan Organisasi</span>
+                  <span class="skill-item-pill">📊 Kepanitiaan Event Kampus</span>
+                  <span class="skill-item-pill">🤝 Humas & Komunikasi Tim</span>
                   <span class="skill-item-pill">🔀 Git & GitHub</span>
                 </div>
               </div>
@@ -2829,9 +2945,9 @@
         <div class="doc-section-wrapper reveal">
           <div class="doc-section-head">
             <span class="section-badge">Galeri Dokumentasi</span>
-            <h2 class="section-title">Dokumentasi <em>Kegiatan & Kepanitiaan</em></h2>
+            <h2 class="section-title">Dokumentasi <em>Kegiatan & Momen Berkesan</em></h2>
             <p class="section-sub">
-              Dokumentasi visual momen pelantikan, musyawarah mahasiswa, forum penyambutan, malam keakraban, hingga aksi kepanitiaan di lingkungan Universitas Trunojoyo Madura.
+              Momen pelantikan, musyawarah mahasiswa, forum penyambutan camaba, malam keakraban (makrab), hingga aksi kepanitiaan bersama teman-teman di Universitas Trunodjoyo Madura.
             </p>
           </div>
 
@@ -2857,7 +2973,7 @@
               </div>
               <div class="doc-body">
                 <h4 class="doc-event-title">Pelantikan Pengurus FKMS Periode 2026–2027</h4>
-                <div class="doc-event-sub"><span>📍</span> Auditorium Universitas Trunojoyo Madura</div>
+                <div class="doc-event-sub"><span>📍</span> Auditorium Universitas Trunodjoyo Madura</div>
                 <p class="doc-event-desc">
                   Pelantikan resmi pengurus FKMS UTM di hadapan pimpinan kampus dan pembina organisasi, mengawali amanah kepengurusan baru.
                 </p>
@@ -2865,7 +2981,7 @@
             </article>
 
             <!-- 2. HIMASI 2026 Rektorat -->
-            <article class="doc-card reveal" data-doc-category="himasi" onclick="openDocLightbox('dokumentasi kepanitiaan himasi periode 2026/himasi 2.3.jpeg', 'Foto Resmi Pengurus HIMASI UTM Periode 2026', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'Sesi foto resmi seluruh jajaran fungsionaris HIMASI UTM Periode 2026 di pelataran Gedung Rektorat Universitas Trunojoyo Madura.')">
+            <article class="doc-card reveal" data-doc-category="himasi" onclick="openDocLightbox('dokumentasi kepanitiaan himasi periode 2026/himasi 2.3.jpeg', 'Foto Resmi Pengurus HIMASI UTM Periode 2026', 'Himpunan Mahasiswa Sistem Informasi (HIMASI) UTM', 'Sesi foto resmi seluruh jajaran fungsionaris HIMASI UTM Periode 2026 di pelataran Gedung Rektorat Universitas Trunodjoyo Madura.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-himasi">⚙️ HIMASI 2026</span>
                 <img src="dokumentasi kepanitiaan himasi periode 2026/himasi 2.3.jpeg" alt="Foto Resmi Pengurus HIMASI UTM 2026" loading="lazy" />
@@ -2875,7 +2991,7 @@
               </div>
               <div class="doc-body">
                 <h4 class="doc-event-title">Foto Resmi Pengurus HIMASI UTM 2026</h4>
-                <div class="doc-event-sub"><span>📍</span> Gedung Rektorat Universitas Trunojoyo Madura</div>
+                <div class="doc-event-sub"><span>📍</span> Gedung Rektorat Universitas Trunodjoyo Madura</div>
                 <p class="doc-event-desc">
                   Fungsionaris Himpunan Mahasiswa Sistem Informasi (HIMASI) berfoto resmi membawa panji kebanggaan himpunan di kampus UTM.
                 </p>
@@ -2883,7 +2999,7 @@
             </article>
 
             <!-- 3. Meet Up CAMABA 2026 FKMS -->
-            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.1.jpeg', 'Meet Up Mahasiswa Baru (CAMABA) 2026', 'FKMS Universitas Trunojoyo Madura', 'Program penyambutan, bimbingan arahan, serta ramah tamah bagi mahasiswa baru asal Kabupaten Sumenep yang menempuh studi di UTM.')">
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.1.jpeg', 'Meet Up Mahasiswa Baru (CAMABA) 2026', 'FKMS Universitas Trunodjoyo Madura', 'Program penyambutan, bimbingan arahan, serta ramah tamah bagi mahasiswa baru asal Kabupaten Sumenep yang menempuh studi di UTM.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-fkms">👋 Meet Up Camaba</span>
                 <img src="dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.1.jpeg" alt="Meet Up CAMABA 2026 FKMS UTM" loading="lazy" />
@@ -2901,7 +3017,7 @@
             </article>
 
             <!-- 4. Pelantikan FKMS 2025-2026 -->
-            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.2.jpeg', 'Pelantikan Pengurus FKMS Periode 2025–2026', 'FKMS Universitas Trunojoyo Madura', 'Pelantikan kepengurusan FKMS UTM Periode 2025–2026 mengenakan jas almamater UTM saat saya resmi diangkat sebagai Sekretaris 1.')">
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.2.jpeg', 'Pelantikan Pengurus FKMS Periode 2025–2026', 'FKMS Universitas Trunodjoyo Madura', 'Pelantikan kepengurusan FKMS UTM Periode 2025–2026 mengenakan jas almamater UTM saat saya resmi diangkat sebagai Sekretaris 1.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-fkms">🎓 FKMS 2025–2026</span>
                 <img src="dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.2.jpeg" alt="Pelantikan Pengurus FKMS 2025–2026" loading="lazy" />
@@ -2919,7 +3035,7 @@
             </article>
 
             <!-- 5. Musyawarah Mahasiswa XII FKMS -->
-            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.jpeg', 'Musyawarah Mahasiswa (MUSMA) Ke-XII FKMS UTM', 'FKMS Universitas Trunojoyo Madura', 'Forum permusyawaratan tertinggi organisasi untuk pembahasan Anggaran Dasar/Anggaran Rumah Tangga (AD/ART) serta evaluasi pertanggungjawaban program kerja.')">
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.jpeg', 'Musyawarah Mahasiswa (MUSMA) Ke-XII FKMS UTM', 'FKMS Universitas Trunodjoyo Madura', 'Forum permusyawaratan tertinggi organisasi untuk pembahasan Anggaran Dasar/Anggaran Rumah Tangga (AD/ART) serta evaluasi pertanggungjawaban program kerja.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-fkms">📜 MUSMA XII</span>
                 <img src="dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.jpeg" alt="Musyawarah Mahasiswa XII FKMS UTM" loading="lazy" />
@@ -2937,7 +3053,7 @@
             </article>
 
             <!-- 6. Panitia Turnamen F-FECT 2026 -->
-            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.3.jpeg', 'Panitia Turnamen Futsal F-FECT 2026', 'FKMS Universitas Trunojoyo Madura', 'Kebersamaan seluruh tim panitia pelaksana turnamen futsal F-FECT 2026 yang diselenggarakan oleh FKMS UTM dengan peserta dari berbagai fakultas.')">
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.3.jpeg', 'Panitia Turnamen Futsal F-FECT 2026', 'FKMS Universitas Trunodjoyo Madura', 'Kebersamaan seluruh tim panitia pelaksana turnamen futsal F-FECT 2026 yang diselenggarakan oleh FKMS UTM dengan peserta dari berbagai fakultas.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-fkms">⚽ Panitia F-FECT 2026</span>
                 <img src="dokumentasi kepanitiaan fkms periode 2025-2026/fkms1.3.jpeg" alt="Panitia Turnamen F-FECT 2026" loading="lazy" />
@@ -2991,7 +3107,7 @@
             </article>
 
             <!-- 9. Rapat Kerja / Evaluasi FKMS -->
-            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.4.jpeg', 'Rapat Koordinasi & Evaluasi Program Kerja FKMS', 'FKMS Universitas Trunojoyo Madura', 'Diskusi santai dan koordinasi evaluasi program kerja bulanan pengurus harian Forum Komunikasi Mahasiswa Sumenep UTM.')">
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.4.jpeg', 'Rapat Koordinasi & Evaluasi Program Kerja FKMS', 'FKMS Universitas Trunodjoyo Madura', 'Diskusi santai dan koordinasi evaluasi program kerja bulanan pengurus harian Forum Komunikasi Mahasiswa Sumenep UTM.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-fkms">📋 Rapat Koordinasi</span>
                 <img src="dokumentasi kepanitiaan fkms periode 2026-2027/fkms 2.4.jpeg" alt="Rapat Koordinasi FKMS UTM" loading="lazy" />
@@ -3009,10 +3125,10 @@
             </article>
 
             <!-- 10. Delegasi LKMM-TD FT UTM -->
-            <article class="doc-card reveal" data-doc-category="event" onclick="openDocLightbox('sertifikat kepanitiaan/lkmm.jpeg', 'Latihan Keterampilan Manajemen Mahasiswa (LKMM-TD)', 'Fakultas Teknik Universitas Trunojoyo Madura', 'Peserta terpilih LKMM-TD Fakultas Teknik UTM di Batu, Malang bersama jajaran pimpinan dan delegasi ormawa fakultas.')">
+            <article class="doc-card reveal" data-doc-category="event" onclick="openDocLightbox('sertifikat kepanitiaan/lkmm.jpeg', 'Latihan Keterampilan Manajemen Mahasiswa (LKMM-TD)', 'Fakultas Teknik Universitas Trunodjoyo Madura', 'Peserta terpilih LKMM-TD Fakultas Teknik UTM di Batu, Malang bersama jajaran pimpinan dan delegasi ormawa fakultas.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-event">🎖️ LKMM-TD FT UTM</span>
-                <img src="sertifikat kepanitiaan/lkmm.jpeg" alt="LKMM-TD Fakultas Teknik Universitas Trunojoyo Madura" loading="lazy" />
+                <img src="sertifikat kepanitiaan/lkmm.jpeg" alt="LKMM-TD Fakultas Teknik Universitas Trunodjoyo Madura" loading="lazy" />
                 <div class="doc-overlay-hover">
                   <div class="doc-zoom-btn">🔍</div>
                 </div>
@@ -3045,7 +3161,7 @@
             </article>
 
             <!-- 12. Foto Formal Pengurus FKMS (Batik) -->
-            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/WhatsApp Image 2026-10-18 at 11.05.32 PM.jpeg', 'Foto Formal Pengurus FKMS UTM (Dresscode Batik)', 'FKMS Universitas Trunojoyo Madura', 'Momen foto bersama formal mengenakan busana batik khas Madura oleh seluruh jajaran pengurus Forum Komunikasi Mahasiswa Sumenep UTM.')">
+            <article class="doc-card reveal" data-doc-category="fkms" onclick="openDocLightbox('dokumentasi kepanitiaan fkms periode 2026-2027/WhatsApp Image 2026-10-18 at 11.05.32 PM.jpeg', 'Foto Formal Pengurus FKMS UTM (Dresscode Batik)', 'FKMS Universitas Trunodjoyo Madura', 'Momen foto bersama formal mengenakan busana batik khas Madura oleh seluruh jajaran pengurus Forum Komunikasi Mahasiswa Sumenep UTM.')">
               <div class="doc-media">
                 <span class="doc-badge-tag badge-tag-fkms">🏛️ Formal FKMS</span>
                 <img src="dokumentasi kepanitiaan fkms periode 2026-2027/WhatsApp Image 2026-10-18 at 11.05.32 PM.jpeg" alt="Foto Formal Pengurus FKMS UTM Batik" loading="lazy" />
@@ -3076,7 +3192,7 @@
                 Sertifikat Kepanitiaan Event Kampus
               </h3>
               <p style="font-size:13px; color:var(--text-muted); margin:0;">
-                Bukti keaktifan sebagai panitia pelaksana kompetisi ilmiah, orientasi jurusan, dan kegiatan olahraga mahasiswa.
+                Bukti keaktifan sebagai panitia pelaksana kompetisi ilmiah, orientasi jurusan, dan kegiatan olahraga mahasiswa di UTM:
               </p>
             </div>
             <span style="font-size:12px; font-weight:700; color:var(--gold-dark); background:var(--gold-light); padding:6px 14px; border-radius:var(--radius-pill);">
@@ -3094,7 +3210,7 @@
               <div class="comm-cert-body">
                 <h5 class="comm-cert-title">DISCO 2025 — Data Mining Competition</h5>
                 <div class="comm-cert-role">Panitia Pelaksana</div>
-                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunodjoyo Madura</div>
               </div>
             </div>
 
@@ -3106,7 +3222,7 @@
               <div class="comm-cert-body">
                 <h5 class="comm-cert-title">PROKSI 2025 — Orientasi Sistem Informasi</h5>
                 <div class="comm-cert-role">Panitia Pelaksana</div>
-                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunodjoyo Madura</div>
               </div>
             </div>
 
@@ -3118,7 +3234,7 @@
               <div class="comm-cert-body">
                 <h5 class="comm-cert-title">EFIS 2025</h5>
                 <div class="comm-cert-role">CO Sie Kesehatan</div>
-                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunodjoyo Madura</div>
               </div>
             </div>
 
@@ -3130,7 +3246,7 @@
               <div class="comm-cert-body">
                 <h5 class="comm-cert-title">KOREKSI 6.0 — Kontes Kreasi & Edukasi SI</h5>
                 <div class="comm-cert-role">Panitia Pelaksana</div>
-                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunodjoyo Madura</div>
               </div>
             </div>
 
@@ -3142,7 +3258,7 @@
               <div class="comm-cert-body">
                 <h5 class="comm-cert-title">X-CAMP 2025 — Jungle Pinus Camp</h5>
                 <div class="comm-cert-role">Panitia Pelaksana</div>
-                <div class="comm-cert-org">HIMASI Universitas Trunojoyo Madura</div>
+                <div class="comm-cert-org">HIMASI Universitas Trunodjoyo Madura</div>
               </div>
             </div>
 
@@ -3154,7 +3270,7 @@
               <div class="comm-cert-body">
                 <h5 class="comm-cert-title">Futsal F-FECT 2026</h5>
                 <div class="comm-cert-role">Panitia Pelaksana</div>
-                <div class="comm-cert-org">FKMS Universitas Trunojoyo Madura</div>
+                <div class="comm-cert-org">FKMS Universitas Trunodjoyo Madura</div>
               </div>
             </div>
 
@@ -3172,13 +3288,13 @@
           <div class="contact-info-panel">
             <div>
               <span class="section-badge" style="background: rgba(255,255,255,0.15); color: #f8fafc; border-color: rgba(255,255,255,0.25);">Mari Terhubung</span>
-              <h3>Buka Peluang & <em>Kolaborasi Digital</em></h3>
+              <h3>Yuk, Mari <em>Terhubung!</em></h3>
               <p>
-                Saya terbuka untuk diskusi proyek perangkat lunak, penelitian bersama, kegiatan kemahasiswaan, maupun kesempatan magang / karier di bidang teknologi informasi.
+                Senang rasanya bisa berkenalan dan berdiskusi. Baik seputar perkuliahan Sistem Informasi, sharing pengalaman organisasi mahasiswa, diskusi proyek web/UI, maupun kesempatan kolaborasi dan magang.
               </p>
 
               <div class="contact-cards-stack">
-                <a href="mailto:kholifatunnaisa@gmail.com" class="contact-pill-card">
+                <a href="mailto:naisahifa@gmail.com" class="contact-pill-card">
                   <div class="c-pill-icon">✉️</div>
                   <div class="c-pill-meta">
                     <strong>Alamat Email Resmi</strong>
@@ -3186,76 +3302,39 @@
                   </div>
                 </a>
 
-                <div class="contact-pill-card" style="cursor: pointer;" onclick="copyEmail()">
-                  <div class="c-pill-icon">📋</div>
+                <a href="https://www.instagram.com/in/kholifatun_naisaa" target="_blank" rel="noopener noreferrer" class="contact-pill-card">
+                  <div class="c-pill-icon">💼</div>
                   <div class="c-pill-meta">
-                    <strong>Salin Kontak Instan</strong>
-                    <span>Klik untuk menyalin email</span>
+                    <strong>Instagram</strong>
+                    <span>kholifatun_naisaa</span>
                   </div>
-                </div>
+                </a>
 
-                <a href="https://linkedin.com/in/kholifatunnaisa" target="_blank" rel="noopener noreferrer" class="contact-pill-card">
+                <a href="https://www.linkedin.com/in/kholifatun-naisa" target="_blank" rel="noopener noreferrer" class="contact-pill-card">
                   <div class="c-pill-icon">💼</div>
                   <div class="c-pill-meta">
                     <strong>LinkedIn Network</strong>
-                    <span>https://www.linkedin.com/in/kholifatun-naisa</span>
+                    <span>linkedin.com/in/kholifatun-naisa</span>
                   </div>
                 </a>
               </div>
             </div>
 
             <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.15); font-size: 12px; color: #94a3b8;">
-              📍 Domisili: Sumenep, Jawa Timur, Indonesia
+              📍 Domisili: Sumenep / Madura, Jawa Timur, Indonesia
             </div>
           </div>
-
-          <!-- Right: Contact Form -->
-          <div class="contact-form-panel">
-            <h3 class="form-title">Kirim Pesan Langsung</h3>
-            <p class="form-subtitle">Formulir ini akan langsung membuka aplikasi email Anda dengan pesan terformat rapi.</p>
-
-            <form id="contactForm" onsubmit="handleContactSubmit(event)">
-              <div class="form-group">
-                <label for="senderName">Nama Lengkap Anda *</label>
-                <input type="text" id="senderName" class="form-control" placeholder="Contoh: Budi Pratama" required />
-              </div>
-
-              <div class="form-group">
-                <label for="senderEmail">Email Anda *</label>
-                <input type="email" id="senderEmail" class="form-control" placeholder="nama@instansi.com" required />
-              </div>
-
-              <div class="form-group">
-                <label for="messageSubject">Keperluan *</label>
-                <input type="text" id="messageSubject" class="form-control" placeholder="Misal: Penawaran Kolaborasi Proyek Web" required />
-              </div>
-
-              <div class="form-group">
-                <label for="messageBody">Detail Pesan *</label>
-                <textarea id="messageBody" class="form-control" placeholder="Tuliskan detail hal yang ingin didiskusikan..." required></textarea>
-              </div>
-
-              <button type="submit" class="form-btn-submit">
-                <span>Kirim Pesan Sekarang ✉</span>
-              </button>
-            </form>
-          </div>
-
         </div>
-
       </div>
     </section>
   </main>
 
-  <!-- ========================================================
-       FOOTER
-       ======================================================== -->
   <footer>
     <div class="container">
       <div class="footer-top">
         <div>
-          <div class="footer-brand">Kholifatun Naisa<span>.</span></div>
-          <div class="footer-desc">Mahasiswa Sistem Informasi · Universitas Trunodjoyo Madura</div>
+          <div class="footer-brand">Naisa<span>.</span></div>
+          <div class="footer-desc">Mahasiswa S1 Sistem Informasi · Universitas Trunodjoyo Madura</div>
         </div>
 
         <ul class="footer-nav">
@@ -3263,17 +3342,18 @@
           <li><a href="#about">Tentang</a></li>
           <li><a href="#certs">Sertifikat</a></li>
           <li><a href="#projects">Proyek</a></li>
+          <li><a href="#journey">Organisasi</a></li>
           <li><a href="#contact">Kontak</a></li>
         </ul>
       </div>
 
       <div class="footer-bottom">
         <div>&copy; 2026 Kholifatun Naisa. Seluruh hak cipta dilindungi.</div>
+        <div>Dibuat dengan semangat belajar dan berproses di dunia teknologi.</div>
       </div>
     </div>
   </footer>
-
-  <!-- ========================================================
+<!-- ========================================================
        LIGHTBOX MODAL FOR CERTIFICATES & ASSETS
        ======================================================== -->
   <div id="lightboxModal" role="dialog" aria-modal="true" aria-label="Peninjau Dokumen" onclick="closeLightbox(event)">
@@ -3480,6 +3560,19 @@
         }
       };
 
+      // 9. Copy Project Link Helper
+      window.copyProjectLink = (url) => {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(() => {
+            showToast("✅ Tautan proyek berhasil disalin: " + url);
+          }).catch(() => {
+            prompt("Salin tautan proyek:", url);
+          });
+        } else {
+          prompt("Salin tautan proyek:", url);
+        }
+      };
+
       // 8. Contact Form Handler
       window.handleContactSubmit = (event) => {
         event.preventDefault();
@@ -3493,7 +3586,7 @@
           return;
         }
 
-        const emailTarget = "kholifatunnaisa@gmail.com";
+        const emailTarget = "naisahifa@gmail.com";
         const emailSubject = `[Portfolio Kontak] ${subject} - dari ${name}`;
         const emailBody = `Halo Kholifatun Naisa,\n\nNama: ${name}\nEmail Pengirim: ${email}\nTopik: ${subject}\n\nPesan:\n${message}\n\n---\nDikirim melalui formulir portofolio Kholifatun Naisa`;
 
@@ -3505,4 +3598,3 @@
   </script>
 </body>
 </html>
-
